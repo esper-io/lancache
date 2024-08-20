@@ -37,11 +37,7 @@ rm -rf /var/git/lancache-cache-domains
 /usr/bin/git clone https://github.com/esper-io/cache-domains.git /var/git/lancache-cache-domains
 
 # Create domain configs from text files
-echo "server_name " | cat - $DOMAINS_DIR/blizzard.txt > $UPSTREAMS_DIR/blizzard-domains.conf
-# echo "server_name " | cat - $DOMAINS_DIR/origin.txt > $UPSTREAMS_DIR/origin-domains.conf 
-echo "server_name " | cat - $DOMAINS_DIR/riot.txt > $UPSTREAMS_DIR/riot-domains.conf
-echo "server_name " | cat - $DOMAINS_DIR/steam.txt > $UPSTREAMS_DIR/steam-domains.conf
-echo "server_name " | cat - $DOMAINS_DIR/windowsupdates.txt > $UPSTREAMS_DIR/winupdate-domains.conf
+echo "server_name " | cat - $DOMAINS_DIR/esper.txt > $UPSTREAMS_DIR/esper.conf
 
 # Add the required semicolon to the end of all domain config files
 for DOMAIN_CONFIG in $UPSTREAMS_DIR/*-domains.conf; do echo ";" >> $DOMAIN_CONFIG; done
