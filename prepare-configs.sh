@@ -32,9 +32,9 @@ UPSTREAMS_DIR="/etc/nginx/upstreams"
 /usr/bin/envsubst '$CACHE_LOGS_DIRECTORY' < /etc/nginx/nginx.conf.templ > /etc/nginx/nginx.conf
 for CACHE_CONFIG in /etc/nginx/caches-available/*.templ; do /usr/bin/envsubst '$CACHE_LOGS_DIRECTORY' < $CACHE_CONFIG > ${CACHE_CONFIG/.templ/}; done
 
-# Get domains from `uklans/cache-domains` GitHub repo
+# Get domains from GitHub repo
 rm -rf /var/git/lancache-cache-domains
-/usr/bin/git clone https://github.com/uklans/cache-domains.git /var/git/lancache-cache-domains
+/usr/bin/git clone https://github.com/esper-io/cache-domains.git /var/git/lancache-cache-domains
 
 # Create domain configs from text files
 echo "server_name " | cat - $DOMAINS_DIR/blizzard.txt > $UPSTREAMS_DIR/blizzard-domains.conf
