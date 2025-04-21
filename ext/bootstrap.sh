@@ -12,6 +12,13 @@ Usage: $(basename "$0") [--config-url URL] [-h|--help]
   -h, --help           Show this help and exit
 
 If you omit --config-url, the script assumes config.json already exists locally.
+
+After bootstrap completes, you can manage the cache server with:
+  sudo systemctl start   esper-cache
+  sudo systemctl stop    esper-cache
+  sudo systemctl restart esper-cache
+  sudo systemctl status  esper-cache
+  sudo systemctl disable esper-cache
 EOF
 }
 
@@ -227,12 +234,3 @@ else
 fi
 
 echo -e "\n${GREEN}Bootstrap complete! Logs: sudo journalctl -u esper-cache -f${NC}"
-
-#############################################
-# Helper commands (also in --help)          #
-#############################################
-# sudo systemctl start   esper-cache
-# sudo systemctl stop    esper-cache
-# sudo systemctl restart esper-cache
-# sudo systemctl status  esper-cache
-# sudo systemctl disable esper-cache
