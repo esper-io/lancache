@@ -1,4 +1,3 @@
-```bash
 #!/usr/bin/env bash
 set -euo pipefail
 
@@ -66,7 +65,6 @@ GREEN="\033[32m"
 YELLOW="\033[1;36m"
 NC="\033[0m"
 TOP_DIR=$(pwd)
-CERTS_DIR="$TOP_DIR/certs"
 
 #############################################
 # 2) Logging                                #
@@ -142,10 +140,10 @@ if [ ! -f "$CONFIG" ]; then
 fi
 
 EID=$(jq -r '."android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE".EID' "$CONFIG")
-TENANT=$(jq -r '."android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE".E' "$CONFIG")
+TENANT=$(jq -r '."android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE".E'  "$CONFIG")
 TOKEN=$(jq -r '."android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE".AT' "$CONFIG")
-BLUEPRINT=$(jq -r '."android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE".B' "$CONFIG")
-GROUP=$(jq -r '."android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE".G' "$CONFIG")
+BLUEPRINT=$(jq -r '."android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE".B'  "$CONFIG")
+GROUP=$(jq -r '."android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE".G'   "$CONFIG")
 
 if [[ -z "$TENANT" || -z "$TOKEN" || -z "$BLUEPRINT" || -z "$GROUP" ]]; then
     echo -e "${RED}Provisioning values missing in config.json${NC}" >&2
