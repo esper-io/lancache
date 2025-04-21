@@ -160,12 +160,12 @@ fi
 #############################################
 # 8) Esper provisioning                     #
 #############################################
-echo -e "\n${GREEN}Running Esper provisioning…${NC}"
-$SUDO bash -c "
-  curl -fsS https://artifacthub.esper.cloud/linux/scripts/dev/setup.sh -o setup.sh && \
-  chmod +x setup.sh && \
-  ./setup.sh --tenant '$TENANT' --token '$TOKEN' --blueprint '$BLUEPRINT' --group '$GROUP'
-"
+# echo -e "\n${GREEN}Running Esper provisioning…${NC}"
+# $SUDO bash -c "
+#   curl -fsS https://artifacthub.esper.cloud/linux/scripts/dev/setup.sh -o setup.sh && \
+#   chmod +x setup.sh && \
+#   ./setup.sh --tenant '$TENANT' --token '$TOKEN' --blueprint '$BLUEPRINT' --group '$GROUP'
+# "
 
 #############################################
 # 9) Fetch & version‑control python service #
