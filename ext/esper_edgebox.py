@@ -4,7 +4,7 @@ Esper EdgeBox
 
 __version__: service version; bump this on each release (e.g. "1.0.0" → "1.0.1").
 """
-__version__ = "1.0.0"
+__version__ = "1.0.3"
 
 import os
 import sys
